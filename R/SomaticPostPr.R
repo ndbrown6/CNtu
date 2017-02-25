@@ -1,4 +1,4 @@
-'SomaticPostPr' <- function(f_hat, n, qt, q2, alpha, w, sthetaq, e=0.01)
+'somaticPostPr' <- function(f_hat, n, qt, q2, alpha, w, sthetaq, e=0.01)
 {
 	PPr = matrix(NA, nrow=length(qt), ncol=length(CNtu::.CntuEnv$ColNames))
 	colnames(PPr) = CNtu::.CntuEnv$ColNames

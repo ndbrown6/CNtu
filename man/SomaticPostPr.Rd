@@ -1,5 +1,5 @@
-\name{SomaticPostPr}
-\alias{SomaticPostPr}
+\name{somaticPostPr}
+\alias{somaticPostPr}
 \title{
 Posterior probability of clonal SNVs
 }
@@ -8,7 +8,7 @@ Computes posterior probabilities for SNVs given observed VAFs, total
 copy numbers, allelic information and cancer cell fraction
 }
 \usage{
-pr = SomaticPostPr(f_hat, n, qt, q2, alpha, w, sthetaq, e)
+pr = somaticPostPr(f_hat, n, qt, q2, alpha, w, sthetaq, e)
 }
 \arguments{
 \item{f_hat}{numeric vector of observed VAFs where f_hat = 0 \eqn{\ldots} 1}
