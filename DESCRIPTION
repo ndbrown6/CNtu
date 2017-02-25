@@ -1,0 +1,13 @@
+Type: Package
+Package: CNtu
+Version: 0.0-1
+Date: 2014-11-14
+Title: Copy Number tree utilities
+Author: David Brown <david.brown@bordet.be>
+Description: Copy Number tree utilities
+Maintainer: David Brown <david.brown@bordet.be>
+URL: http://homepages.ulb.ac.be/~dbrown/
+Depends: R (>= 3.0.1), ape, phangorn, iterpc, colorspace
+License: GPL (>= 2)
+biocViews: Microarray
+LazyLoad: yes
