@@ -7,7 +7,7 @@ Author: David Brown <brownd7@mskcc.org>
 Description: Copy Number tree utilities
 Maintainer: David Brown <brownd7@mskcc.org>
 URL:
-Depends: R (>= 3.0.1), ape, phangorn, iterpc, colorspace
+Depends: R (>= 3.0.1), ape, phangorn, colorspace
 License: GPL (>= 2)
 biocViews:
 LazyLoad: yes
