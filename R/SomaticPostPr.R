@@ -1,5 +1,11 @@
-'somaticPostPr' <- function(f_hat, n, qt, q2, alpha, w, sthetaq, e=0.01)
+'SomaticPostPr' <- function(f_hat, n, qt, q2, alpha, w=NULL, sthetaq=NULL, e=0.01)
 {
+	if (is.null(w)) {
+		w = CNtu::.CntuEnv$mut_class_w
+	}
+	if (is.null(sthetaq)) {
+		sthetaq = CNtu::.CntuEnv$pi_som_theta_q
+	}
 	PPr = matrix(NA, nrow=length(qt), ncol=length(CNtu::.CntuEnv$ColNames))
 	colnames(PPr) = CNtu::.CntuEnv$ColNames
 	somq = matrix(NA, nrow=length(qt), ncol=length(sthetaq))

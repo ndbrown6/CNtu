@@ -98,7 +98,8 @@
     return(invisible(res))
 }
 
-'.backend.jitter' <- function(x, y) {
+'.backend.jitter' <- function (x, y)
+{
 	qx = seq(from=min(x, na.rm=TRUE), to=max(x, na.rm=TRUE), length=10)
 	nx = vector(mode="numeric", length=(length(qx)-1))
 	for (i in 1:length(nx)) {
@@ -111,6 +112,15 @@
 		z[index] = jitter(z[index], amount=nx[i])
 	}
 	return(invisible(z))	
+}
+
+'.backend.ccfposteriorgrid' <- function (alt, ref, alpha, q, grid)
+{
+	f = (alpha * grid)/(2 * (1 - alpha) + alpha * q)
+	N = alt + ref
+	ll_grid = dbinom(alt, N, f, log=TRUE)
+	pr_grid = exp(ll_grid - .backend.LogAdd(ll_grid))
+	return(invisible(pr_grid))
 }
 
 .CntuEnv <- new.env()
