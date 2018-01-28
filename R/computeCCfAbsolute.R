@@ -34,5 +34,6 @@
   	ccf_ci95[ix, ] = NA
   	res = cbind(cell_mult, cell_frac, ccf_hat, ccf_ci95)
   	colnames(res) = c("cell_multiplicity", "scaled_cell_frac", "cancer_cell_frac", "ccf_95CI_low", "ccf_95CI_high")
+  	res = cbind(res, s_ppr$PPr)
   	return(invisible(res))
 }
