@@ -1,4 +1,5 @@
-'colorPalette' <- function (palette="ubuntu orange") {
+'colorPalette' <- function (palette = "ubuntu orange")
+{
 	data('tints')
 	tmp = unlist(strsplit(x=palette, split=" ", fixed=TRUE))
 	tint = tmp[1]

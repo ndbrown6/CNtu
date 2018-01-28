@@ -98,22 +98,6 @@
     return(invisible(res))
 }
 
-'.backend.jitter' <- function (x, y)
-{
-	qx = seq(from=min(x, na.rm=TRUE), to=max(x, na.rm=TRUE), length=10)
-	nx = vector(mode="numeric", length=(length(qx)-1))
-	for (i in 1:length(nx)) {
-		nx[i] = sum(x>=qx[i] & x<qx[i+1], na.rm=TRUE)
-	}
-	nx = .25*(nx - min(nx))/(max(nx)-min(nx))
-	z = rep(y, length(x))
-	for (i in 1:length(nx)) {
-		index = which(x>=qx[i] & x<qx[i+1])
-		z[index] = jitter(z[index], amount=nx[i])
-	}
-	return(invisible(z))	
-}
-
 '.backend.ccfposteriorgrid' <- function (alt, ref, alpha, q, grid)
 {
 	f = (alpha * grid)/(2 * (1 - alpha) + alpha * q)

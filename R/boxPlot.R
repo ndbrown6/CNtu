@@ -1,5 +1,5 @@
-'boxPlot' <- function (x, main = "", sub = "", xlab = "", ylab = "",
-					   col, file = "", lwd = 2, ...)
+'boxPlot' <- function (x, main = "", sub  = "", xlab = "", ylab = "", col, file = "",
+					   lwd  = 2, ...)
 {
 	if ("list" %in% is(x)) {
 		nboxes = length(x)
@@ -38,26 +38,14 @@
     	title(main=paste("\n", sub, sep=""), cex.main=1.5)
     }
     if ("list" %in% is(x)) {
-		if (any(unlist(lapply(x, length))<50)) {
-			for (i in 1:nboxes) {
-				points(jitter(rep(i, length(x[[i]])), amount=.25), x[[i]], pch=19, col=col[[i]], cex=2.0)
-			}
-		} else {
-			for (i in 1:nboxes) {
-				points(.backend.jitter(x[[i]], i), x[[i]], pch=19, col=col[[i]], cex=2.0)
-			}
+		for (i in 1:nboxes) {
+			points(jitter(rep(i, length(x[[i]])), amount=.25), x[[i]], pch=19, col=col[[i]], cex=2.0)
 		}
     } else if ("matrix" %in% is(x)) {
-		if (nrow(x)<50) {
-	    	for (i in 1:nboxes) {
+		for (i in 1:nboxes) {
 	    		points(jitter(rep(i, nrow(x)), amount=.25), x[,i], pch=19, col=col[i], cex=2.0)
-	    	}
-		} else {
-			for (i in 1:nboxes) {
-				points(.backend.jitter(x[,i], i), x[,i], pch=19, col=col[i], cex=2.0)
-			}
-		}
-    }
+	    }
+	}
     if (nboxes==2) {
     	if ("list" %in% is(x)) {
     		p = wilcox.test(x=x[[1]], y=x[[2]], alternative="two.sided", exact=FALSE)$p.value

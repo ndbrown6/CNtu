@@ -1,7 +1,8 @@
-'CalculateCCfAbsolute' <- function(f_hat, n, qt, q2, alpha, e=0.01)
+'computeCCfAbsolute' <- function(f_hat, n, qt, q2, alpha, e=0.01)
 {
 	q_s = rep(NA, length(f_hat))
-	pr_somatic_clonal = SomaticPostPr(f_hat, n, qt, q2, w=NULL, sthetaq=NULL, alpha, e)$PPr[,"Pr_somatic_clonal"]
+	s_ppr = somaticPostPr(f_hat, n, qt, q2, w=NULL, sthetaq=NULL, alpha, e)
+	pr_somatic_clonal = s_ppr$PPr[,"Pr_somatic_clonal"]
 	c.ix = pr_somatic_clonal > 0.5
 	q_s[c.ix] = pr_somatic_clonal[c.ix]
 	q_s[!c.ix] = 1 
@@ -18,7 +19,7 @@
   		if (qt[i]==0) {
   			next
   		}
-  		ccf_dens[i,] = .backend.ccfposteriorgrid(round(f_hat*n), n-round(f_hat*n), alpha, qt, ccf_grid)
+  		ccf_dens[i,] = CNtu:::.backend.ccfposteriorgrid(round(f_hat[i]*n[i]), n-round(f_hat[i]*n[i]), alpha, qt[i], ccf_grid)
     	ccf_hat[i] = ccf_grid[which.max(ccf_dens[i,])]
     	ecdf = cumsum(ccf_dens[i, ])
     	ccf_ci95[i, ] = approx(x=ecdf, y=ccf_grid, xout=c(0.025, 0.975))$y

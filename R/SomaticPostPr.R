@@ -1,4 +1,4 @@
-'SomaticPostPr' <- function(f_hat, n, qt, q2, alpha, w=NULL, sthetaq=NULL, e=0.01)
+'somaticPostPr' <- function(f_hat, n, qt, q2, alpha, w=NULL, sthetaq=NULL, e=0.01)
 {
 	if (is.null(w)) {
 		w = CNtu::.CntuEnv$mut_class_w
@@ -15,7 +15,6 @@
 	ukeyz = ukeyz[order(nkeyz, decreasing=TRUE)]
 	nkeyz = sort(nkeyz, decreasing=TRUE)
 	for (i in 1:length(nkeyz)) {
-		print(i)
 		tmpk = strsplit(ukeyz[i], "/" )[[1]]
 		qtL = as.integer(tmpk[1])
 		q2L = as.integer(tmpk[2])

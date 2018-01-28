@@ -1,5 +1,5 @@
-'dilutionCurve' <- function (sq, qt, alpha = 1:99)
+'dilutionCurve' <- function (sq, qt, alpha = seq(from=.1, to=.99, length=99))
 {
-	fsq = 100*sq*alpha/(alpha*qt + 2*(100-alpha))
+	fsq = sq*alpha/(alpha*qt + 2*(1-alpha))
 	return(invisible(fsq))
 }
