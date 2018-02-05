@@ -41,15 +41,11 @@ scatterPlot(x, y, z, main, sub, xlab, ylab, col, fit, cor, legend, file, ...)
 \item{...}{addition arguments that may be passed to \code{plot}}
 }
 \value{
-none
+None
 }
 \author{
 \cr
 David Brown\cr
-\email{dbrown@ulb.ac.be}\cr
-\url{http://homepages.ulb.ac.be/~dbrown/}
-}
-\seealso{
-\code{\link{boxPlot}}
+\email{brownd7@mskcc.org}\cr
 }
 \keyword{}

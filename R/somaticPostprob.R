@@ -1,4 +1,4 @@
-'somaticPostPr' <- function(f_hat, n, qt, q2, alpha, w=NULL, sthetaq=NULL, e=0.01)
+'somaticPostprob' <- function(f_hat, n, qt, q2, alpha, w=NULL, sthetaq=NULL, e=0.01)
 {
 	if (is.null(w)) {
 		w = CNtu::.CntuEnv$mut_class_w
@@ -85,5 +85,5 @@
 	PPs = cbind(PPr, sq=sq)
 	somPr = rowSums(PPs[,c("Pr_somatic_clonal", "Pr_subclonal"),drop=FALSE], na.rm=TRUE)
 	PPs = cbind(PPs, Pr_somatic=somPr)
-	return(invisible(list(PPr=PPs, som_mut_Q_tab=somq)))
+	return(invisible(list(ppr=PPs, som_mut_Q_tab=somq)))
 }

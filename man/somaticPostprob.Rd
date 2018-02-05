@@ -1,14 +1,14 @@
-\name{somaticPostPr}
-\alias{somaticPostPr}
+\name{somaticPostprob}
+\alias{somaticPostprob}
 \title{
-Posterior probability of clonal SNVs
+Posterior probability of clonal SNV
 }
 \description{
-Computes posterior probabilities for SNVs given observed VAFs, total
-copy numbers, allelic information and cancer cell fraction
+Computes posterior probabilities for SNV given observed VAF, total
+copy numbers, allelic information and cellular fraction
 }
 \usage{
-pr = somaticPostPr(f_hat, n, qt, q2, alpha, w, sthetaq, e)
+pr = somaticPostprob(f_hat, n, qt, q2, alpha, w, sthetaq, e)
 }
 \arguments{
 \item{f_hat}{numeric vector of observed VAFs where f_hat = 0 \eqn{\ldots} 1}
@@ -22,7 +22,7 @@ pr = somaticPostPr(f_hat, n, qt, q2, alpha, w, sthetaq, e)
 }
 \value{
 list of two as follows:
-\item{PPr}{data frame of posterior probabilities with following column description:\cr
+\item{ppr}{data frame of posterior probabilities with following column description:\cr
 		   \enumerate{
     			\item{Pr_somatic_clonal:	}{probability that SNV is somatic and strictly clonal}
     			\item{Pr_germline:	}{probability that SNV is a germline mutation}
@@ -47,10 +47,6 @@ most of it is undocumented
 \author{
 \cr
 David Brown\cr
-\email{dbrown@ulb.ac.be}\cr
-\url{http://homepages.ulb.ac.be/~dbrown/}
-}
-\seealso{
-\code{\link{mutatedCopies}}
+\email{brownd7@mskcc.org}\cr
 }
 \keyword{}

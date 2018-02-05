@@ -8,8 +8,6 @@ Plots dilution curves of expected VAFs at all multiplicites i.e. 2/1, 2/2, 3/1, 
 given contamination with normal cells harboring two non mutated copies
 }
 \usage{
-setupCurves()
-setupCurves(nqt, col, lty)
 setupCurves(nqt, col, lty, f_hat, qt, sq)
 }
 \arguments{
@@ -21,21 +19,17 @@ setupCurves(nqt, col, lty, f_hat, qt, sq)
 \item{sq}{optional integer vector of number of mutated copies where \eqn{||sq|| = ||f_hat||}}
 }
 \value{
-none
+None
 }
 \note{
-If f_hat, qt and sq are provided, the function \code{cancerCellFraction(...)} is called
-to compute the maximum likelihood of cancer cell fractions. These are displayed as a
+If f_hat, qt and sq are provided, the function \code{cellularFraction(...)} is called
+to compute the maximum likelihood of cellular fractions. These are displayed as a
 scatter plot above the dilution curves. For clarity, user should not attempt to go beyond
 \eqn{nqt = 3} and similarly remove points in f_hat, qt and sq where \eqn{qt>3}.
 }
 \author{
 \cr
 David Brown\cr
-\email{dbrown@ulb.ac.be}\cr
-\url{http://homepages.ulb.ac.be/~dbrown/}
-}
-\seealso{
-\code{\link{dilutionCurve}}
+\email{brownd7@mskcc.org}\cr
 }
 \keyword{}

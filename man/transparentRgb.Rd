@@ -7,23 +7,18 @@ RGB to HTML color code
 Converts a character string specifying a color into HTML color code with alpha transparency
 }
 \usage{
-htmlcol = transparentRgb()
-htmlcol = transparentRgb(col, alpha)
+html = transparentRgb(col, alpha)
 }
 \arguments{
 \item{col}{character string specifying a known color in \code{colors(...)}}
 \item{alpha}{numeric between 1 and 255 specifying the alpha transparency}
 }
 \value{
-character string of specified HTML color
+Character string of specified HTML color
 }
 \author{
 \cr
 David Brown\cr
-\email{dbrown@ulb.ac.be}\cr
-\url{http://homepages.ulb.ac.be/~dbrown/}
-}
-\seealso{
-\code{\link{scatterPlot}}
+\email{brownd7@mskcc.org}\cr
 }
 \keyword{}

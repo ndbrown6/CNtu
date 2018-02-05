@@ -10,7 +10,7 @@
     }
     axis(1, at=NULL, cex.axis=1.5, cex.lab=1.5, las=1)
    	axis(2, at=NULL, cex.axis=1.5, cex.lab=1.5, las=1)
-    title(xlab="Cancer cell fraction (%)", ylab="Variant allele fraction (%)", cex.lab=1.75, cex.main=1.75)
+    title(xlab="Cellular fraction (%)", ylab="Variant allele fraction (%)", cex.lab=1.75, cex.main=1.75)
     if (!is.null(f_hat)) {
     	if (!is.null(qt) & length(qt)==length(f_hat)) {
     		if (!is.null(sq) & length(sq)==length(qt)) {
