@@ -21,7 +21,7 @@
 '.backend.addPoints' <- function (f_hat, qt, sq, col)
 {
 	cols = col[qt]
-	ccf = cancerCellFraction(f_hat, qt, sq)
+	ccf = cancercellFraction(f_hat, qt, sq)
 	points(ccf*100, f_hat*100, type="p", pch="X", col=cols, cex=1.2, lwd=1.5)
 }
 
