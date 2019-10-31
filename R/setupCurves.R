@@ -4,7 +4,7 @@
 	plot(0, 0, type="n", axes=FALSE, xlab="", ylab="", frame.plot=FALSE, xlim=c(0,100), ylim=c(0,100))
     for (i in 1:nqt) {
     	for (j in 1:i) {
-    		fsq = dilutionCurve(sq=j, qt=i)*100
+    		fsq = dilutionCurve(sq=j, qt=i, alpha = seq(from=0, to=1, length=99))*100
     		lines(1:99, fsq, col=col[i], lwd=2, lty=lty[j])
     	}
     }
